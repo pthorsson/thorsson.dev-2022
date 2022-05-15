@@ -1,0 +1,116 @@
+@import '@fontsource/roboto-mono/400.css';
+@import '@fontsource/roboto-mono/600.css';
+
+:root {
+  font-family: 'Roboto Mono', monospace;
+
+  /* Base colors */
+  --color-black: #1e2530;
+  --color-mid-grey: #738094;
+  --color-light-grey: #f0f0f0;
+  --color-white: #ffffff;
+  --color-blue: #4773b5;
+  --color-blue-light: #739bd7;
+
+  --page-padding: 2.4rem;
+  --page-width-narrow: 98rem;
+
+  /* Theme */
+  --color-background-primary: var(--color-white);
+  --color-background-secondary: var(--color-light-grey);
+  --color-foreground-primary: var(--color-black);
+  --color-foreground-secondary: var(--color-mid-grey);
+  --color-foreground-action: var(--color-blue);
+  --color-foreground-active: var(--color-blue-light);
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --transition-duration: 150ms;
+}
+
+/* Tablet */
+@media (min-width: 480px) {
+  :root {
+    --page-padding: 4.8rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  :root {
+    --page-padding: 9rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground-primary);
+}
+
+#root {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+p {
+  font-weight: var(--font-weight-normal);
+}
+
+p {
+  line-height: 2;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+a {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-foreground-primary);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+a:hover {
+  color: var(--color-foreground-secondary);
+}
+
+code {
+  display: inline-block;
+  padding: 0 0.45em;
+  border-radius: 0.25em;
+  background: var(--color-foreground-primary);
+  color: var(--color-background-primary);
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}

@@ -1,0 +1,53 @@
+{
+  "name": "thorsson.dev-2022",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@3.2.0",
+  "private": true,
+  "scripts": {
+    "build": "run-s 'build:sync-assets' 'build:svelte-kit' --print-name",
+    "build:svelte-kit": "svelte-kit build",
+    "build:sync-assets": "node scripts/sync-assets",
+    "dev": "run-p 'dev:*'",
+    "dev:svelte-kit": "svelte-kit dev",
+    "dev:sync-assets": "node scripts/sync-assets --watch",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.29",
+    "@sveltejs/kit": "^1.0.0-next.317",
+    "@types/marked": "^4.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "chokidar-cli": "^3.0.0",
+    "copyfiles": "^2.4.1",
+    "dotenv": "^16.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.7.0",
+    "rimraf": "^3.0.2",
+    "svelte": "^3.47.0",
+    "svelte-check": "^2.7.0",
+    "svelte-preprocess": "^4.10.6",
+    "throttle-debounce": "^5.0.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@fontsource/roboto-mono": "^4.5.5",
+    "highlight.js": "^11.5.1",
+    "is-plain-object": "^5.0.0",
+    "marked": "^4.0.14",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.51.0",
+    "yaml": "^1.10.2"
+  }
+}

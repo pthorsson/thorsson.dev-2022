@@ -1,0 +1,14 @@
+baseTitle: Page base title
+navigation:
+  indexLinkText:
+    main: thorsson
+    suffix: .dev
+  links:
+    - text: cv
+      href: /cv
+    - text: projects
+      href: /projects
+    - text: blog
+      href: /blog
+    - text: random page
+      href: /random-page

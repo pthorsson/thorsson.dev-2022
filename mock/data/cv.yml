@@ -1,0 +1,43 @@
+meta:
+  title: Meta title
+  description: This is a description
+  fileName: firstName_lastName_cv.pdf
+sections:
+  - template: intro
+    content:
+      heading: Intro heading
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      image:
+        src: /assets/cv-photo.jpg
+        alt: Cat Buscemi
+  - template: experiences
+    content:
+      heading: experiences
+      items:
+        - from: '2021.04'
+          company: Fourth company
+          role: my role
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+        - from: '2020.07'
+          to: '2021.03'
+          company: Third company
+          role: my role
+          description:md: Lorem ipsum dolor sit **amet**, _consectetur_ adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+        - from: '2015.12'
+          to: '2020.06'
+          company:md: '[Second company with link](https://www.google.com/)'
+          role: my role
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+        - from: '2010.05'
+          to: '2015.04'
+          company: First company
+          role: my role
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+  - template: text
+    content:
+      heading: skills
+      text:md: Lorem, Ipsum, [Googling](https://www.google.com/), Another thing, Something else, Also this.
+  - template: text
+    content:
+      heading: misc.
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
