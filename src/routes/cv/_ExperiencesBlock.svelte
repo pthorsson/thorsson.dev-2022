@@ -122,6 +122,9 @@
   }
 
   .time-duration {
+    display: flex;
+    flex-direction: row;
+
     @media ($untilL) {
       &::before {
         content: '(';
