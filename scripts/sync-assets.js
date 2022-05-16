@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import '../load-env.js';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import copyfiles from 'copyfiles';
@@ -12,8 +12,11 @@ const watch = process.argv.includes('--watch');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const SOURCE = join(__dirname, '../', VITE_CONTENT_DIR, 'assets/**/*');
-const TARGET = join(__dirname, '../', 'static/assets');
+const ROOT_DIR = join(__dirname, '../');
+const CONTENT_DIR = join(ROOT_DIR, VITE_CONTENT_DIR);
+
+const SOURCE = join(CONTENT_DIR, 'assets/**/*');
+const TARGET = join(ROOT_DIR, 'static/assets');
 
 async function main() {
   if (watch) {
@@ -42,9 +45,13 @@ main().catch(console.error);
 
 function copyAssets() {
   return new Promise((resolve) => {
-    copyfiles([SOURCE, TARGET], { up: __dirname.split('/').length + 1 }, () => {
-      resolve();
-    });
+    copyfiles(
+      [SOURCE, TARGET],
+      { up: CONTENT_DIR.split('/').length + 1 },
+      () => {
+        resolve();
+      }
+    );
   });
 }
 

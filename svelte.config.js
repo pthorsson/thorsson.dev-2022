@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import './load-env.js';
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { readdirSync } from 'node:fs';
@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(__dirname, process.env.VITE_CONTENT_DIR);
+
+console.log(`Using "${process.env.VITE_CONTENT_DIR}" for content`);
 
 const pages = readdirSync(join(CONTENT_DIR, 'pages'))
   .filter((file) => file.endsWith('.md'))
