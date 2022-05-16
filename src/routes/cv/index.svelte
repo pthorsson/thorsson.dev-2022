@@ -41,7 +41,12 @@
   {/each}
 </div>
 
-<a rel="external" href={cv.meta.fileName} download={cv.meta.fileName}>
+<a
+  rel="external"
+  href={cv.meta.fileName}
+  download={cv.meta.fileName}
+  aria-label="Download CV as .pdf"
+>
   <svg fill="none" viewBox="0 0 46 46">
     <path
       d="M37 13.993V40a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16.007a2 2 0 0 1 1.415.586l7.992 7.992A2 2 0 0 1 37 13.993Z"

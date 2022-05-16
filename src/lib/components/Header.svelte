@@ -18,7 +18,12 @@
       </i>
     </a>
   </div>
-  <button class="toggle-nav" class:show on:click={() => (show = !show)} />
+  <button
+    class="toggle-nav"
+    class:show
+    on:click={() => (show = !show)}
+    aria-label={show ? 'Close menu' : 'Open menu'}
+  />
   <nav class:show>
     {#each data.links as { href, text }, i}
       <a
