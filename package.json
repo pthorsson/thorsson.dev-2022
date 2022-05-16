@@ -9,7 +9,7 @@
     "build:svelte-kit": "svelte-kit build",
     "build:sync-assets": "node scripts/sync-assets",
     "dev": "run-p 'dev:*'",
-    "dev:svelte-kit": "svelte-kit dev",
+    "dev:svelte-kit": "svelte-kit dev --host",
     "dev:sync-assets": "node scripts/sync-assets --watch",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
