@@ -795,7 +795,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
+"cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:
@@ -888,28 +888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cli@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "dotenv-cli@npm:5.1.0"
-  dependencies:
-    cross-spawn: ^7.0.3
-    dotenv: ^16.0.0
-    dotenv-expand: ^8.0.1
-    minimist: ^1.2.5
-  bin:
-    dotenv: cli.js
-  checksum: dd060623c4b63555effe9c25c073c0c01be1f0d17a0bc35a6b18f98ca8f918a5dfdd0ff2b879152fd2df9d57b207126d04adcb0207b9f66268ba9c788c213578
-  languageName: node
-  linkType: hard
-
-"dotenv-expand@npm:^8.0.1":
-  version: 8.0.3
-  resolution: "dotenv-expand@npm:8.0.3"
-  checksum: 128ce90ac825b543de3ece0154a51b056ab0dc36bb26d97a68cd0b8707327ecd3c182fb6ac63b26a0fcdfa85064419906a1065cb634f1f9dc08ad311375f1fc0
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:^16.0.0, dotenv@npm:^16.0.1":
+"dotenv@npm:^16.0.1":
   version: 16.0.1
   resolution: "dotenv@npm:16.0.1"
   checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
@@ -2353,7 +2332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
+"minimist@npm:^1.2.0, minimist@npm:^1.2.6":
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
@@ -3596,7 +3575,6 @@ __metadata:
     chokidar-cli: ^3.0.0
     copyfiles: ^2.4.1
     dotenv: ^16.0.1
-    dotenv-cli: ^5.1.0
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-svelte3: ^3.2.1
