@@ -46,35 +46,72 @@
   <h2>{content.heading}</h2>
   <div class="experiences">
     {#each content.items as { from, to, company, role, description }}
-      <div class="cv-block-grid">
-        <div class="cv-block-col-25 time-info">
+      <div class="experience">
+        <div class="time-info">
           <div class="time-span">
             <div>{from}</div>
             <div class="arrow" />
             <div>{to || 'present'}</div>
           </div>
-          <div class="duration" class:hide-in-print={!to}>
+          <div class="time-duration" class:hide-in-print={!to}>
             {getDuration(from, to)}
           </div>
         </div>
-        <div class="cv-block-col-75">
-          <h3>{@html company} — {@html role}</h3>
-          <p>{@html description}</p>
-        </div>
+        <h3>{@html company} — {@html role}</h3>
+        <p>{@html description}</p>
       </div>
     {/each}
   </div>
 </div>
 
 <style lang="scss">
+  @import 'src/lib/breakpoints';
+
   .experiences {
     display: flex;
     flex-direction: column;
     gap: 5rem;
   }
 
+  .experience {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 4rem;
+    grid-template-areas:
+      'heading'
+      'time'
+      'text';
+
+    @media ($fromL) {
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas:
+        'time heading'
+        'time text';
+    }
+  }
+
+  h3 {
+    grid-area: heading;
+  }
+
+  p {
+    grid-area: text;
+  }
+
   .time-info {
+    display: flex;
+    grid-area: time;
     color: var(--color-foreground-secondary);
+
+    @media ($untilL) {
+      gap: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    @media ($fromL) {
+      flex-direction: column;
+    }
   }
 
   .time-span {
@@ -84,13 +121,29 @@
     gap: 1rem;
   }
 
+  .time-duration {
+    @media ($untilL) {
+      &::before {
+        content: '(';
+      }
+
+      &::after {
+        content: ')';
+      }
+    }
+  }
+
   .arrow {
     display: flex;
     align-items: center;
     position: relative;
     height: 1em;
-    width: 2.4rem;
-    margin-top: 2px;
+    width: 1rem;
+
+    @media ($fromL) {
+      margin-top: 2px;
+      width: 2.4rem;
+    }
 
     &::before {
       display: block;

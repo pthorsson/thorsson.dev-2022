@@ -15,9 +15,15 @@
 
 <script lang="ts">
   import type { CvData } from '$lib/types';
-  import Intro from './_IntroBlock.svelte';
-  import Experiences from './_ExperiencesBlock.svelte';
-  import Text from './_TextBlock.svelte';
+  import IntroBlock from './_IntroBlock.svelte';
+  import ExperiencesBlock from './_ExperiencesBlock.svelte';
+  import TextBlock from './_TextBlock.svelte';
+
+  const templates = {
+    intro: IntroBlock,
+    experiences: ExperiencesBlock,
+    text: TextBlock
+  };
 
   export let cv: CvData;
 </script>
@@ -28,13 +34,9 @@
 </svelte:head>
 
 <div class="cv-body">
-  {#each cv.sections as section}
-    {#if section.template === 'intro'}
-      <Intro content={section.content} />
-    {:else if section.template === 'experiences'}
-      <Experiences content={section.content} />
-    {:else if section.template === 'text'}
-      <Text content={section.content} />
+  {#each cv.sections as { template, content }}
+    {#if templates[template]}
+      <svelte:component this={templates[template]} {content} />
     {/if}
   {/each}
 </div>
@@ -50,6 +52,8 @@
 </a>
 
 <style lang="scss">
+  @import 'src/lib/breakpoints';
+
   a {
     position: fixed;
     right: var(--page-padding);
@@ -135,26 +139,5 @@
       font-weight: 600;
       color: var(--color-foreground-active);
     }
-  }
-
-  :global(.cv-block-grid) {
-    display: flex;
-    gap: 4rem;
-  }
-
-  :global(.cv-block-col-25) {
-    width: 25%;
-  }
-
-  :global(.cv-block-col-50) {
-    width: 50%;
-  }
-
-  :global(.cv-block-col-75) {
-    width: 75%;
-  }
-
-  :global(.cv-block-col-100) {
-    width: 100%;
   }
 </style>
