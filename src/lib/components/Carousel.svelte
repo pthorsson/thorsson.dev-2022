@@ -38,6 +38,9 @@
 </script>
 
 <div class="wrapper">
+  <div class="pane" bind:this={pane} on:scroll={scrollHandler}>
+    <slot />
+  </div>
   <div class="footer" class:loaded>
     <button
       class="prev"
@@ -50,9 +53,6 @@
       disabled={disableNextButton}
       on:click={() => changeSlideHandler(1)}
     />
-  </div>
-  <div class="pane" bind:this={pane} on:scroll={scrollHandler}>
-    <slot />
   </div>
 </div>
 
@@ -100,6 +100,10 @@
 
     &.loaded {
       opacity: 1;
+    }
+
+    @media ($untilL) {
+      display: none;
     }
   }
 
