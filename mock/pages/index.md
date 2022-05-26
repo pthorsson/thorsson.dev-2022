@@ -6,10 +6,8 @@ meta:
   title: Title of the page
   description: This is the description of the page
 pageLinks:
-  - projects/project-1
-  - projects/project-2
-  - blog/post-1
-  - projects/project-3
+  - projects/markdown-examples
+  - projects/sample-page
   - random-page
 ---
 

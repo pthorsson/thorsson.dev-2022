@@ -1,6 +1,6 @@
 import type { PageData } from '$lib/types';
 import { join } from 'node:path';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import { CONTENT_DIR } from '$lib/config';
 import markdown from '$lib/helpers/markdown';
 import YAML from 'yaml';
@@ -14,11 +14,18 @@ export async function loadMarkdownFile(fileName: string) {
 
       const promotedPage = await readMarkdownFile(slug);
 
-      data.pageLinks[i] = {
-        slug,
-        data: promotedPage.data
-      };
+      if (promotedPage) {
+        data.pageLinks[i] = {
+          slug,
+          data: promotedPage.data
+        };
+      } else {
+        delete data.pageLinks[i];
+        console.error('Page link not found:', slug);
+      }
     }
+
+    data.pageLinks = data.pageLinks.filter(Boolean);
   }
 
   if (data.layout === 'collection' && data.collection) {
@@ -36,10 +43,14 @@ export async function loadMarkdownFile(fileName: string) {
 
       const page = await readMarkdownFile(collectionFilePath);
 
-      data.collection.push({
-        slug: `/${collectionFilePath}`,
-        data: page.data
-      });
+      if (page) {
+        data.collection.push({
+          slug: `/${collectionFilePath}`,
+          data: page.data
+        });
+      } else {
+        console.error('Collection item link not found:', collectionFile);
+      }
     }
   }
 
@@ -56,7 +67,14 @@ async function readMarkdownFile(
   file: string
 ): Promise<{ data: PageData; body: string }> {
   const fileName = join(CONTENT_DIR, 'pages', `${file}.md`);
-  const rawData = await readFile(fileName, 'utf8');
+
+  let rawData: string;
+
+  try {
+    rawData = await readFile(fileName, 'utf8');
+  } catch (error) {
+    return null;
+  }
 
   const lines = rawData.split(/\r?\n/);
 
