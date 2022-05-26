@@ -46,8 +46,6 @@
   }
 
   .image {
-    display: flex;
-    flex: 0 0 auto;
     grid-area: image;
 
     @media ($untilL) {
