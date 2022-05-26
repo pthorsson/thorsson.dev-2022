@@ -23,6 +23,12 @@
   import CollectionLayout from './_CollectionLayout.svelte';
   import LandingLayout from './_LandingLayout.svelte';
 
+  const layouts = {
+    content: ContentLayout,
+    collection: CollectionLayout,
+    landing: LandingLayout
+  };
+
   export let data: PageData;
   export let body: string;
 </script>
@@ -33,10 +39,8 @@
 
 <TextRevealHandler enabled={data.animateTextReveals} />
 
-{#if data.layout === 'landing'}
-  <LandingLayout {body} {data} />
-{:else if data.layout === 'content'}
-  <ContentLayout {body} />
-{:else if data.layout === 'collection'}
-  <CollectionLayout {body} {data} />
+{#if layouts[data.layout]}
+  <svelte:component this={layouts[data.layout]} {body} {data} />
+{:else}
+  {console.error('Invalid layout for page', data.layout)}
 {/if}
