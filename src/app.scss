@@ -107,6 +107,7 @@ a {
   color: var(--color-foreground-primary);
   text-decoration: none;
   transition: color var(--transition-duration);
+  letter-spacing: -0.02em;
 }
 
 a:hover {
@@ -128,7 +129,7 @@ h6 {
   font-weight: var(--font-weight-bold);
   margin: 0.75em 0;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -156,6 +157,7 @@ h6 {
 }
 
 p {
+  letter-spacing: -0.02em;
   font-size: 1.7rem;
 }
 
@@ -209,11 +211,9 @@ pre {
 
   code {
     display: inline;
+    padding: 0;
+    line-height: 1.5;
   }
-}
-
-p {
-  letter-spacing: -0.02em;
 }
 
 code {
@@ -221,7 +221,8 @@ code {
   background: var(--color-foreground-primary);
   color: var(--color-background-primary);
   border-radius: 0.5rem;
-  padding: 0em 0.5em;
+  padding: 0.25em 0.5em;
+  line-height: 1;
 }
 
 hr {
