@@ -15,6 +15,7 @@
 
 <script lang="ts">
   import type { CvData } from '$lib/types';
+
   import IntroBlock from './_IntroBlock.svelte';
   import ExperiencesBlock from './_ExperiencesBlock.svelte';
   import TextBlock from './_TextBlock.svelte';
@@ -37,6 +38,8 @@
   {#each cv.sections as { template, content }}
     {#if templates[template]}
       <svelte:component this={templates[template]} {content} />
+    {:else}
+      {console.error('Invalid block template for page', template)}
     {/if}
   {/each}
 </div>
@@ -57,7 +60,7 @@
 </a>
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   a {
     position: fixed;
@@ -125,13 +128,13 @@
     }
 
     :global(h3) {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 600;
       margin: 0;
     }
 
     :global(p) {
-      font-size: 1.6rem;
+      /* font-size: 1.6rem; */
       margin: 0;
     }
 

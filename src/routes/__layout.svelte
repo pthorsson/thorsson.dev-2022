@@ -16,7 +16,7 @@
 <script lang="ts">
   import type { MetaData } from '$lib/types';
   import Header from '$lib/components/Header.svelte';
-  import '../app.css';
+  import '../app.scss';
 
   export let metaData: MetaData;
 </script>

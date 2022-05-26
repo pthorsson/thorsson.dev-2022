@@ -21,7 +21,7 @@
     disableNextButton = progress > 1 - slideWidthPercentage * 0.2;
   }
 
-  function handleChangeSlide(direction: number) {
+  function changeSlideHandler(direction: number) {
     const slideWidth = pane.children[0].clientWidth;
 
     pane.scrollBy({
@@ -42,13 +42,13 @@
     <button
       class="prev"
       disabled={disablePreviousButton}
-      on:click={() => handleChangeSlide(-1)}
+      on:click={() => changeSlideHandler(-1)}
     />
     <div class="indicator" bind:this={indicator} />
     <button
       class="next"
       disabled={disableNextButton}
-      on:click={() => handleChangeSlide(1)}
+      on:click={() => changeSlideHandler(1)}
     />
   </div>
   <div class="pane" bind:this={pane} on:scroll={scrollHandler}>
@@ -57,7 +57,7 @@
 </div>
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   .wrapper {
     position: relative;
@@ -193,6 +193,7 @@
     overscroll-behavior-x: none;
     padding-bottom: var(--padding-bottom, 0px);
     padding-top: var(--padding-top, 0px);
+    scrollbar-width: none;
 
     > :global(*) {
       width: var(--carousel-item-width);
@@ -202,6 +203,10 @@
 
     > :global(*:last-child) {
       scroll-snap-align: end;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     &::before,

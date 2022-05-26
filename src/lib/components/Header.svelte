@@ -43,7 +43,7 @@
 <div class="header-spacer" />
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   header {
     position: fixed;

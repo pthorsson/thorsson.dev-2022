@@ -17,7 +17,7 @@
 </script>
 
 <main>
-  <div class="page-body" class:loaded>
+  <div class="landing-body" class:loaded>
     {@html body}
   </div>
   {#if data.layout === 'landing'}
@@ -32,7 +32,7 @@
 </main>
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   main {
     padding: 0 var(--page-padding);
@@ -42,7 +42,7 @@
     height: calc(100% - env(safe-area-inset-bottom));
   }
 
-  .page-body {
+  .landing-body {
     width: 100%;
     display: flex;
     justify-content: center;

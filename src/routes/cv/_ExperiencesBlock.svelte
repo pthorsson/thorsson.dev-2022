@@ -65,7 +65,7 @@
 </div>
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   .experiences {
     display: flex;
@@ -92,6 +92,7 @@
 
   h3 {
     grid-area: heading;
+    padding: 0.25em 0;
   }
 
   p {

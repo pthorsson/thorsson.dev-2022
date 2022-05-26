@@ -13,7 +13,7 @@
 </div>
 
 <style lang="scss">
-  @import 'src/lib/breakpoints';
+  @import 'src/lib/scss/breakpoints';
 
   .wrapper {
     display: grid;
