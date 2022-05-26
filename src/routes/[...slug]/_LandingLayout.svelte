@@ -57,9 +57,17 @@
       margin: 0;
     }
 
+    :global(a) {
+      color: var(--color-foreground-primary);
+
+      &:hover {
+        color: var(--color-foreground-secondary);
+      }
+    }
+
     :global(p) {
       text-align: left;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 400;
       line-height: 1.5em;
     }
@@ -78,7 +86,7 @@
     }
 
     :global(ul > li) {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
     }
 
     :global(ul > li > a) {
