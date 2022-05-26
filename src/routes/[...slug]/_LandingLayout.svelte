@@ -93,6 +93,7 @@
       padding: 0px 0.5em 0px 0px;
       opacity: 0;
       transition: all 1000ms;
+      margin: 0;
     }
 
     &.loaded :global(ul > li::before) {
