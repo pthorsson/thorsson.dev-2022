@@ -29,9 +29,6 @@
   --transition-duration: 150ms;
 
   --font-family-mono: 'Roboto Mono', monospace;
-  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
 
   font-family: var(--font-family-mono);
 }
@@ -104,14 +101,14 @@ h2 {
 
 a {
   font-weight: var(--font-weight-normal);
-  color: var(--color-foreground-primary);
+  color: var(--color-foreground-action);
   text-decoration: none;
   transition: color var(--transition-duration);
   letter-spacing: -0.02em;
-}
 
-a:hover {
-  color: var(--color-foreground-secondary);
+  &:hover {
+    color: var(--color-foreground-active);
+  }
 }
 
 input,
@@ -137,19 +134,19 @@ h1 {
 }
 
 h2 {
-  font-size: 2.6rem;
-}
-
-h3 {
   font-size: 2.2rem;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 h4 {
-  font-size: 2.05rem;
+  font-size: 1.9rem;
 }
 
 h5 {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
 }
 
 h6 {
@@ -159,17 +156,18 @@ h6 {
 p {
   letter-spacing: -0.02em;
   font-size: 1.7rem;
+  margin: 1em 0;
 }
 
 ul,
 ol {
+  line-height: 2em;
   padding-left: 1.5em;
   counter-reset: list;
 }
 
 ul > li {
   list-style: none;
-  line-height: 1.5em;
   counter-increment: list;
   &::before {
     content: '*';
@@ -179,7 +177,6 @@ ul > li {
 
 ol > li {
   list-style: none;
-  line-height: 1.5em;
   counter-increment: list;
   &::before {
     content: counter(list) '.';
@@ -206,7 +203,7 @@ pre {
   @media ($fromM) {
     border-radius: 0.5rem;
     padding: 2rem 2.5rem;
-    margin: 3rem -2.5rem;
+    margin: 4rem -2.5rem;
   }
 
   code {
