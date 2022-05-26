@@ -59,6 +59,7 @@
     border-radius: 100%;
     width: 220px;
     aspect-ratio: 1;
+    margin: 0 auto;
 
     @media ($fromL) {
       width: 100%;
