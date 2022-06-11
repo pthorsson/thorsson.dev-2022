@@ -57,7 +57,7 @@
     font-size: 1.25em;
     background: var(--color-background-primary);
     height: 6rem;
-    z-index: 500;
+    z-index: 501;
 
     @media ($fromM) {
       height: 8rem;
@@ -78,6 +78,7 @@
     width: 100%;
     height: 6rem;
     margin-top: 6rem;
+    z-index: 500;
 
     &::before {
       content: '';
