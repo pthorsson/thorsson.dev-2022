@@ -8,3 +8,9 @@
   <h2>{@html content.heading}</h2>
   <p>{@html content.text}</p>
 </div>
+
+<style lang="scss">
+  div {
+    break-after: avoid-page;
+  }
+</style>

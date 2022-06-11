@@ -5,9 +5,10 @@
   "packageManager": "yarn@3.2.0",
   "private": true,
   "scripts": {
-    "build": "run-s 'build:sync-assets' 'build:svelte-kit' --print-name",
+    "build": "run-s 'build:sync-assets' 'build:svelte-kit' 'build:create-cv-pdf' --print-name",
     "build:svelte-kit": "svelte-kit build",
     "build:sync-assets": "node scripts/sync-assets",
+    "build:create-cv-pdf": "node scripts/create-cv-pdf",
     "dev": "run-p 'dev:*'",
     "dev:svelte-kit": "svelte-kit dev --host",
     "dev:sync-assets": "node scripts/sync-assets --watch",
@@ -31,9 +32,13 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "http-terminator": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.7.0",
+    "puppeteer": "^14.3.0",
     "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
     "svelte": "^3.47.0",
     "svelte-check": "^2.7.0",
     "svelte-preprocess": "^4.10.6",
@@ -46,7 +51,6 @@
     "highlight.js": "^11.5.1",
     "is-plain-object": "^5.0.0",
     "marked": "^4.0.14",
-    "npm-run-all": "^4.1.5",
     "sass": "^1.51.0",
     "yaml": "^1.10.2"
   }

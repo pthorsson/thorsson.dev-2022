@@ -1,6 +1,9 @@
 <script context="module" lang="ts">
   import type { Load } from '@sveltejs/kit';
 
+  export const hydrate = false;
+  export const prerender = true;
+
   export const load: Load = async ({ fetch }) => {
     const res = await fetch('/data/cv.json');
     const cv = await res.json();
@@ -134,7 +137,6 @@
     }
 
     :global(p) {
-      /* font-size: 1.6rem; */
       margin: 0;
     }
 

@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 4rem;
+    break-inside: avoid-page;
     grid-template-areas:
       'image'
       'heading'

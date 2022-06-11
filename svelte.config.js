@@ -12,7 +12,8 @@ console.log(`Using "${process.env.VITE_CONTENT_DIR}" for content`);
 
 const pages = readdirSync(join(CONTENT_DIR, 'pages'))
   .filter((file) => file.endsWith('.md'))
-  .map((file) => '/' + file.replace('.md', ''));
+  .map((file) => '/' + file.replace('.md', ''))
+  .concat(['/cv', '/cv/print']);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

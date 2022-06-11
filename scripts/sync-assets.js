@@ -23,7 +23,9 @@ async function main() {
     const throttledCopyFiles = throttle(
       500,
       async () => {
-        console.log('Syncing assets to static directory ...');
+        console.log(
+          '[scripts/sync-assets] Syncing assets to static directory ...'
+        );
         await clearAssets();
         await copyAssets();
       },
@@ -35,7 +37,7 @@ async function main() {
 
     chokidar.watch(SOURCE).on('all', throttledCopyFiles);
   } else {
-    console.log('Syncing assets to static directory ...');
+    console.log('[scripts/sync-assets] Syncing assets to static directory ...');
     await clearAssets();
     await copyAssets();
   }
