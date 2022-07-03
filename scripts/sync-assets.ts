@@ -6,7 +6,7 @@ import chokidar from 'chokidar';
 import rimraf from 'rimraf';
 import { throttle } from 'throttle-debounce';
 
-const { VITE_CONTENT_DIR } = process.env;
+const { VITE_CONTENT_DIR = '.' } = process.env;
 
 const watch = process.argv.includes('--watch');
 
@@ -46,7 +46,7 @@ async function main() {
 main().catch(console.error);
 
 function copyAssets() {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     copyfiles(
       [SOURCE, TARGET],
       { up: CONTENT_DIR.split('/').length + 1 },
@@ -58,7 +58,7 @@ function copyAssets() {
 }
 
 function clearAssets() {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     rimraf(TARGET, () => {
       resolve();
     });

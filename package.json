@@ -7,11 +7,11 @@
   "scripts": {
     "build": "run-s 'build:sync-assets' 'build:svelte-kit' 'build:create-cv-pdf' --print-name",
     "build:svelte-kit": "svelte-kit build",
-    "build:sync-assets": "node scripts/sync-assets",
-    "build:create-cv-pdf": "node scripts/create-cv-pdf",
+    "build:sync-assets": "ts-node-esm scripts/sync-assets",
+    "build:create-cv-pdf": "ts-node-esm scripts/create-cv-pdf",
     "dev": "run-p 'dev:*'",
     "dev:svelte-kit": "svelte-kit dev --host",
-    "dev:sync-assets": "node scripts/sync-assets --watch",
+    "dev:sync-assets": "ts-node-esm scripts/sync-assets --watch",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
@@ -43,6 +43,7 @@
     "svelte-check": "^2.7.0",
     "svelte-preprocess": "^4.10.6",
     "throttle-debounce": "^5.0.0",
+    "ts-node": "^10.8.1",
     "tslib": "^2.3.1",
     "typescript": "^4.6.2"
   },

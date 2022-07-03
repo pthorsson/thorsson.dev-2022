@@ -8,7 +8,7 @@ import puppeteer from 'puppeteer';
 import handler from 'serve-handler';
 import { createHttpTerminator } from 'http-terminator';
 
-const { VITE_CONTENT_DIR } = process.env;
+const { VITE_CONTENT_DIR = '.' } = process.env;
 
 const CV_DATA_FILE = resolve(join(VITE_CONTENT_DIR, 'data/cv.yml'));
 const BASE_PATH = resolve('./build');
