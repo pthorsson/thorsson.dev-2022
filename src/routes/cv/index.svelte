@@ -70,6 +70,10 @@
     right: var(--page-padding);
     bottom: var(--page-padding);
 
+    @media print {
+      display: none;
+    }
+
     &::after {
       content: 'Download as .pdf';
       position: absolute;
@@ -117,6 +121,11 @@
     margin: 0 auto;
     line-height: 2em;
     padding: 0 var(--page-padding) 10rem var(--page-padding);
+
+    @media print {
+      max-width: 100%;
+      padding: 1mm; // To prevent cropping in pdf
+    }
 
     :global(h1) {
       font-size: 3.2rem;

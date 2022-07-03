@@ -77,13 +77,13 @@
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 4rem;
-    break-inside: avoid-page;
+    break-inside: avoid;
     grid-template-areas:
       'heading'
       'time'
       'text';
 
-    @media ($fromL) {
+    @media print, ($fromL) {
       grid-template-columns: 1fr 3fr;
       grid-template-areas:
         'time heading'
@@ -114,6 +114,11 @@
     @media ($fromL) {
       flex-direction: column;
     }
+
+    @media print {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
   }
 
   .time-span {
@@ -136,6 +141,10 @@
         content: ')';
       }
     }
+
+    @media print {
+      display: none;
+    }
   }
 
   .arrow {
@@ -145,7 +154,7 @@
     height: 1em;
     width: 1rem;
 
-    @media ($fromL) {
+    @media print, ($fromL) {
       margin-top: 2px;
       width: 2.4rem;
     }
@@ -153,9 +162,12 @@
     &::before {
       display: block;
       content: '';
-      height: 0.15rem;
       width: 100%;
-      background: currentColor;
+      border-bottom: 0.15rem solid currentColor;
+
+      @media print {
+        border-bottom: 2px solid currentColor;
+      }
     }
 
     &::after {
@@ -168,6 +180,11 @@
       border-top: 0.15rem solid currentColor;
       transform: rotate(45deg);
       right: 0;
+
+      @media print {
+        border-right: 2px solid currentColor;
+        border-top: 2px solid currentColor;
+      }
     }
   }
 </style>

@@ -47,6 +47,13 @@
   }
 }
 
+@media print {
+  a {
+    color: var(--color-foreground-primary) !important;
+    font-weight: inherit !important;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -56,6 +63,8 @@
 html {
   font-size: 62.5%;
   height: 100vh;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 body {

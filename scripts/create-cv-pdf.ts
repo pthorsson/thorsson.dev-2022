@@ -13,7 +13,7 @@ const { VITE_CONTENT_DIR = '.' } = process.env;
 const CV_DATA_FILE = resolve(join(VITE_CONTENT_DIR, 'data/cv.yml'));
 const BASE_PATH = resolve('./build');
 
-const PORT = 3000;
+const PORT = 3010;
 
 async function main() {
   console.log('[scripts/create-cv-pdf] Creating CV PDF file ...');
@@ -42,12 +42,12 @@ async function main() {
   await page.pdf({
     path: cvOutputFile,
     format: 'a4',
-    scale: 0.7,
+    scale: 0.76,
     margin: {
-      top: '20mm',
-      bottom: '20mm',
-      left: '15mm',
-      right: '15mm'
+      top: '30mm',
+      bottom: '30mm',
+      left: '25mm',
+      right: '25mm'
     }
   });
 

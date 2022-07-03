@@ -25,7 +25,7 @@
       'heading'
       'text';
 
-    @media ($fromL) {
+    @media print, ($fromL) {
       grid-template-columns: 3fr 1fr;
       grid-template-areas:
         'heading image'
@@ -40,6 +40,11 @@
       text-align: center;
       padding-bottom: 3rem;
     }
+
+    @media print {
+      text-align: left;
+      padding-bottom: 0;
+    }
   }
 
   p {
@@ -53,6 +58,11 @@
       justify-content: center;
       padding-bottom: 5rem;
     }
+
+    @media print {
+      text-align: flex-start;
+      padding-bottom: 0;
+    }
   }
 
   img {
@@ -62,7 +72,7 @@
     aspect-ratio: 1;
     margin: 0 auto;
 
-    @media ($fromL) {
+    @media print, ($fromL) {
       width: 100%;
     }
   }
