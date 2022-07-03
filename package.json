@@ -26,6 +26,7 @@
     "@types/copyfiles": "^2.4.1",
     "@types/marked": "^4.0.3",
     "@types/rimraf": "^3.0.2",
+    "@types/serve-handler": "^6.1.1",
     "@types/throttle-debounce": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
