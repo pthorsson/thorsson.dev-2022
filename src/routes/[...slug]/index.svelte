@@ -6,6 +6,8 @@
     const res = await fetch(`/${slug}.json`);
     const { data, body } = await res.json();
 
+    console.log('params', params);
+
     return {
       props: {
         data,

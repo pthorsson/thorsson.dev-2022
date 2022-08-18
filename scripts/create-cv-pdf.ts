@@ -42,7 +42,7 @@ async function main() {
   await page.pdf({
     path: cvOutputFile,
     format: 'a4',
-    scale: 0.76,
+    scale: 0.745,
     margin: {
       top: '30mm',
       bottom: '30mm',

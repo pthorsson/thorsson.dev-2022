@@ -18,7 +18,12 @@ export async function loadYmlFile(file: string) {
 
 function applyMarkdown(data: { [key: string]: any }) {
   for (const [key, value] of Object.entries(data)) {
-    if (key.includes(':md') && typeof value === 'string') {
+    if (key.includes(':md_block') && typeof value === 'string') {
+      data[key.replace(':md_block', '')] = markdown.parse(value, {
+        breaks: true
+      });
+      delete data[key];
+    } else if (key.includes(':md') && typeof value === 'string') {
       data[key.replace(':md', '')] = markdown.parseInline(value);
       delete data[key];
     } else if (isPlainObject(value)) {

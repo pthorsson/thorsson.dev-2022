@@ -42,7 +42,7 @@
   }
 </script>
 
-<div>
+<div class="wrapper">
   <h2>{content.heading}</h2>
   <div class="experiences">
     {#each content.items as { from, to, company, role, description }}
@@ -66,6 +66,11 @@
 
 <style lang="scss">
   @import 'src/lib/scss/breakpoints';
+
+  .wrapper {
+    page-break-after: always;
+    clear: both;
+  }
 
   .experiences {
     display: flex;

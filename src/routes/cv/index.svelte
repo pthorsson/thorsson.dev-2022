@@ -113,14 +113,20 @@
   }
 
   .cv-body {
-    display: flex;
-    flex-direction: column;
-    gap: 7.5rem;
+    float: none;
     max-width: var(--page-width-narrow);
     width: 100%;
     margin: 0 auto;
     line-height: 2em;
     padding: 0 var(--page-padding) 10rem var(--page-padding);
+
+    > :global(*) {
+      margin-bottom: 7.5rem;
+    }
+
+    > :global(*:last-child) {
+      margin-bottom: 0;
+    }
 
     @media print {
       max-width: 100%;

@@ -6,7 +6,7 @@
 
 <div class="wrapper">
   <h1>{content.heading}</h1>
-  <p>{content.text}</p>
+  <p>{@html content.text}</p>
   <div class="image">
     <img src={content.image.src} alt={content.image.alt} />
   </div>
