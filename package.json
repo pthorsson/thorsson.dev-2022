@@ -15,11 +15,14 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
+    "@next/env": "^13.0.7",
     "@sveltejs/adapter-auto": "^1.0.0",
     "@sveltejs/kit": "^1.0.0",
     "@types/cookie": "^0.5.1",
+    "@types/marked": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
@@ -30,5 +33,13 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@fontsource/roboto-mono": "^4.5.8",
+    "highlight.js": "^11.7.0",
+    "is-plain-object": "^5.0.0",
+    "marked": "^4.2.4",
+    "sass": "^1.56.2",
+    "yaml": "^2.1.3"
   }
 }
