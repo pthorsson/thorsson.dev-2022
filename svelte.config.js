@@ -5,6 +5,7 @@ import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 env.config();
+env.config({ path: '.env.local', override: true });
 
 const PAGES_DIR = join(process.env.VITE_CONTENT_DIR, 'pages');
 
