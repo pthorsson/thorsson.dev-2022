@@ -1,6 +1,10 @@
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import { isPlainObject } from 'is-plain-object';
 import markdown from '$lib/utils/markdown';
 import { loadPageBySlug } from '$lib/utils/loadPageBySlug';
+import type { PageData } from '$lib/types';
+import { CONTENT_DIR } from '$lib/config';
 
 const actions = {
   async md(value: string) {
@@ -15,9 +19,30 @@ const actions = {
     return page
       ? {
           slug: value,
-          data: page.pageData
+          pageData: page.pageData
         }
       : null;
+  },
+  async sub_pages(value: string) {
+    const subPages: { slug: string; pageData: PageData }[] = [];
+    const dir = join(CONTENT_DIR, 'pages', value);
+    const files = await readdir(dir);
+
+    for (const file of files) {
+      if (file !== '_index.md' && file.includes('.md')) {
+        const slug = join(value, file.replace('.md', ''));
+        const data = await loadPageBySlug(slug);
+
+        if (data?.pageData) {
+          subPages.push({
+            slug,
+            pageData: data.pageData
+          });
+        }
+      }
+    }
+
+    return subPages;
   }
 } as const;
 

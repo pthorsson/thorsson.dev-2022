@@ -1,5 +1,4 @@
 ---
-layout: content
 createdAt: 2022-01-02 00:00
 meta:
   title: Sample page

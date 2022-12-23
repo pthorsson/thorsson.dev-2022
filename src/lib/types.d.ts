@@ -13,7 +13,7 @@ export type PageData = {
   createdAt: string;
   meta: MetaData;
   animateTextReveals?: boolean;
-  collection: { slug: string; data: PageData }[];
+  collection: { slug: string; pageData: PageData }[];
 };
 
 export type SiteMetaData = {
