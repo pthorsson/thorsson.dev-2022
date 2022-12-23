@@ -1,0 +1,17 @@
+metaData:
+  title: this is title
+  description: this is desc
+heading: Here is some cool text
+firstSubHeading: also here
+secondSubHeading: aaand also here
+links:
+  - text: A link
+    href: http://www.google.com/
+  - text: Another link
+    href: http://www.google.com/
+  - text: The last link
+    href: http://www.google.com/
+promotedPages:page:
+  - /projects/markdown-examples
+  - /projects/sample-page
+  - /random-page

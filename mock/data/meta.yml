@@ -4,8 +4,6 @@ navigation:
     main: thorsson
     suffix: .dev
   links:
-    - text: cv
-      href: /cv
     - text: projects
       href: /projects
     - text: blog
