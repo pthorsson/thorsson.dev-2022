@@ -6,7 +6,7 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 
 env.config();
 
-const PAGES_DIR = join(process.env.CONTENT_DIR, 'pages');
+const PAGES_DIR = join(process.env.VITE_CONTENT_DIR, 'pages');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
