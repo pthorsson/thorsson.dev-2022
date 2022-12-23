@@ -1,6 +1,5 @@
-import markdown from '$lib/utils/markdown';
 import { isPlainObject } from 'is-plain-object';
-import { deepClone } from '$lib/utils/deepClone';
+import markdown from '$lib/utils/markdown';
 import { loadPageBySlug } from '$lib/utils/loadPageBySlug';
 
 const actions = {
@@ -25,7 +24,7 @@ const actions = {
 export async function processObject<T>(data: {
   [key: string]: any;
 }): Promise<T> {
-  const clonedData = deepClone(data);
+  const clonedData = JSON.parse(JSON.stringify(data));
 
   async function _processObject(obj: any) {
     for (const [key, value] of Object.entries(obj)) {
