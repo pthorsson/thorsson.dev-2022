@@ -25,13 +25,21 @@
 
 <main>
   <div class="landing-body" class:loaded>
-    <h1 class="-tt">Here is some cool text</h1>
+    <h1 class="-tt">{data.heading}</h1>
 
     <p>
-      <span class="-tt">also here</span>
+      <span class="-tt">{data.firstSubHeading}</span>
       <br />
-      <i class="-tt">aaand also here</i>
+      <i class="-tt">{data.secondSubHeading}</i>
     </p>
+
+    <ul>
+      {#each data.links as { text, href }}
+        <li>
+          <a {href} class="-tt" target="_blank" rel="noreferrer">{text}</a>
+        </li>
+      {/each}
+    </ul>
   </div>
 
   <div class="page-links">
