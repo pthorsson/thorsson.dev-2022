@@ -1,5 +1,7 @@
 @import '@fontsource/roboto-mono/400.css';
 @import '@fontsource/roboto-mono/600.css';
+@import '@fontsource/jetbrains-mono/300.css';
+@import '@fontsource/jetbrains-mono/700.css';
 @import 'lib/scss/breakpoints';
 @import 'lib/scss/custom-scrollbar';
 @import 'lib/scss/highlight-theme-nord';
@@ -7,7 +9,7 @@
 :root {
   /* Base colors */
   --color-black: #1e2530;
-  --color-mid-grey: #617590;
+  --color-mid-grey: #7085a1;
   --color-light-grey: #f0f0f0;
   --color-white: #ffffff;
   --color-blue: #4773b5;
@@ -28,7 +30,7 @@
   --font-weight-bold: 600;
   --transition-duration: 150ms;
 
-  --font-family-mono: 'Roboto Mono', monospace;
+  --font-family-mono: 'Jetbrains Mono', monospace;
 
   font-family: var(--font-family-mono);
 }

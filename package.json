@@ -35,6 +35,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.0.18",
     "@fontsource/roboto-mono": "^4.5.8",
     "highlight.js": "^11.7.0",
     "is-plain-object": "^5.0.0",

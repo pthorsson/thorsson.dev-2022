@@ -183,6 +183,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/jetbrains-mono@npm:^5.0.18":
+  version: 5.0.18
+  resolution: "@fontsource/jetbrains-mono@npm:5.0.18"
+  checksum: 7d99f794b7088b66b76643301490d6b08d08c6c11f1a6d6ebb0d993a2c033c108bce2e5d1d781bd094c153c0885c7c0908f23075841924a87869649c2687983b
+  languageName: node
+  linkType: hard
+
 "@fontsource/roboto-mono@npm:^4.5.8":
   version: 4.5.8
   resolution: "@fontsource/roboto-mono@npm:4.5.8"
@@ -2753,6 +2760,7 @@ __metadata:
   resolution: "thorsson.dev-2022@workspace:."
   dependencies:
     "@fontsource/fira-mono": ^4.5.10
+    "@fontsource/jetbrains-mono": ^5.0.18
     "@fontsource/roboto-mono": ^4.5.8
     "@neoconfetti/svelte": ^1.0.0
     "@next/env": ^13.0.7
